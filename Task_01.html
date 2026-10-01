@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Kiran Academy - Build Your Career</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Task_01.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Compact marquee with proper padding so title is not hidden) -->
+  <div class="top-announcement">
+    <div class="announcement-badge"><i class="fa-solid fa-bullhorn"></i> UPDATES</div>
+    <div class="marquee-wrapper">
+      <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+        🚀 Join now and Build Your Career with The Kiran Academy | 100% Placement Assistance | New Weekend & Weekday Batches for Full Stack Java, Python & Data Science starting this Monday! Register for Free Demo Lecture today! Call: +91 91234 56789
+      </marquee>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#home" class="brand-logo" onclick="showSection('home')">
+        <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="logo-text">
+          <span class="logo-main">The Kiran Academy</span>
+          <span class="logo-sub">Empowering IT Professionals</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" onclick="showSection('home')"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#courses" class="nav-link" onclick="showSection('courses')"><i class="fa-solid fa-book-open"></i> Courses</a>
+        <a href="#placements" class="nav-link" onclick="showSection('placements')"><i class="fa-solid fa-trophy"></i> Placements</a>
+        <a href="#mock-interviews" class="nav-link" onclick="showSection('mock-interviews')"><i class="fa-solid fa-user-tie"></i> Mock Interviews</a>
+        <a href="#demo-lectures" class="nav-link" onclick="showSection('demo-lectures')"><i class="fa-solid fa-video"></i> Demo Lectures</a>
+        <a href="#dashboard" class="nav-link" onclick="showSection('dashboard')"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="#about" class="nav-link" onclick="showSection('about')"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      </nav>
+
+      <div class="auth-buttons" id="authNavButtons">
+        <button class="btn btn-outline" onclick="openModal('loginModal')"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button>
+        <button class="btn btn-primary" onclick="openModal('signupModal')"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- SECTION 1: HOME -->
+  <section id="home" class="page-section active-section">
+    <div class="hero-section">
+      <div class="hero-content">
+        <span class="badge-pill">#1 IT Training & Placement Institute</span>
+        <h1>Transform Your Ambition Into An <span>IT Career</span></h1>
+        <p>Master in-demand technologies like Java Full Stack, Python AI, Cloud Computing, and Data Science with industry veteran Kiran Sir and top corporate architects.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="showSection('courses')"><i class="fa-solid fa-compass"></i> Explore Courses</button>
+          <button class="btn btn-secondary btn-lg" onclick="showSection('demo-lectures')"><i class="fa-solid fa-play"></i> Watch Demo</button>
+          <button class="btn btn-outline-white btn-lg" onclick="openModal('signupModal')"><i class="fa-solid fa-bolt"></i> Enroll Now</button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h3>12,500+</h3>
+            <p>Students Trained</p>
+          </div>
+          <div class="stat-card">
+            <h3>96.4%</h3>
+            <p>Placement Ratio</p>
+          </div>
+          <div class="stat-card">
+            <h3>₹24 LPA</h3>
+            <p>Highest Package</p>
+          </div>
+          <div class="stat-card">
+            <h3>450+</h3>
+            <p>Hiring Partners</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Features -->
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Why Choose <span>The Kiran Academy</span></h2>
+        <p>We don't just teach programming syntax; we mold you into a corporate-ready software engineer.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>100% Practical Learning</h3>
+          <p>Real-world industry project development using modern toolchains, Git versioning, and CI/CD pipelines.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Dedicated Placement Cell</h3>
+          <p>Uncapped interview calls with MNCs, product enterprises, and top-tier tech startups until you get placed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-purple"><i class="fa-solid fa-user-check"></i></div>
+          <h3>Weekly Mock Interviews</h3>
+          <p>1-on-1 technical drills, live coding screens, aptitude tests, and HR behavioral grooming by industry managers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-orange"><i class="fa-solid fa-certificate"></i></div>
+          <h3>ISO & Industry Certified</h3>
+          <p>Globally recognized certifications with verifiable credentials to make your resume stand out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: AVAILABLE COURSES -->
+  <section id="courses" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Our Comprehensive <span>Courses</span></h2>
+        <p>Industry-aligned curriculums designed by software architects. All fees mentioned in Indian Rupees (₹).</p>
+      </div>
+
+      <div class="course-controls">
+        <input type="text" id="courseSearchInput" placeholder="Search course by name, tech or skill..." onkeyup="filterCourses()">
+        <div class="category-pills">
+          <button class="pill active" onclick="filterCourseCategory('all', this)">All</button>
+          <button class="pill" onclick="filterCourseCategory('development', this)">Development</button>
+          <button class="pill" onclick="filterCourseCategory('data', this)">Data & AI</button>
+          <button class="pill" onclick="filterCourseCategory('testing', this)">Testing & Cloud</button>
+        </div>
+      </div>
+
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Courses will be rendered dynamically via JS -->
+      </div>
+
+      <div class="load-more-container" id="coursesLoadMoreWrap">
+        <button class="btn btn-primary" id="toggleCoursesBtn" onclick="toggleCoursesDisplay()">
+          <i class="fa-solid fa-arrow-down"></i> View More Courses (<span id="hiddenCourseCount">0</span> remaining)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PLACEMENTS -->
+  <section id="placements" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Our Stellar <span>Placements</span></h2>
+        <p>Meet our ambitious alumni who turned hard work into dream job offers with stellar salary packages.</p>
+      </div>
+
+      <!-- Placement Stats Banner -->
+      <div class="placement-highlight-box">
+        <div class="p-item">
+          <h4>₹24 LPA</h4>
+          <span>Highest Package</span>
+        </div>
+        <div class="p-item">
+          <h4>₹6.8 LPA</h4>
+          <span>Average Package</span>
+        </div>
+        <div class="p-item">
+          <h4>850+</h4>
+          <span>Drives in 2025-26</span>
+        </div>
+        <div class="p-item">
+          <h4>100%</h4>
+          <span>Support Guaranteed</span>
+        </div>
+      </div>
+
+      <!-- Placements Grid -->
+      <div class="placements-grid" id="placementsGrid">
+        <!-- Placements will be dynamically rendered via JS -->
+      </div>
+
+      <div class="load-more-container" id="placementsLoadMoreWrap">
+        <button class="btn btn-primary" id="togglePlacementsBtn" onclick="togglePlacementsDisplay()">
+          <i class="fa-solid fa-arrow-down"></i> View More Placements (<span id="hiddenPlacementCount">0</span> remaining)
+        </button>
+      </div>
+
+      <!-- Corporate Hiring Partners -->
+      <div class="partners-section">
+        <h3>Our Top Hiring Companies</h3>
+        <div class="partner-logos">
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Tata Consultancy Services (TCS)</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Infosys Ltd</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Wipro Technologies</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Cognizant</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Capgemini</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Tech Mahindra</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> Persistent Systems</div>
+          <div class="partner-card"><i class="fa-solid fa-building"></i> LTIMindtree</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MOCK INTERVIEWS -->
+  <section id="mock-interviews" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Corporate <span>Mock Interviews</span></h2>
+        <p>Eliminate interview fear through rigorous 1-on-1 rounds with actual corporate tech leads and HR managers.</p>
+      </div>
+
+      <div class="mock-grid">
+        <div class="mock-info">
+          <div class="mock-step-card">
+            <div class="step-num">01</div>
+            <div>
+              <h4>Technical Coding Round</h4>
+              <p>Live coding problems on Data Structures, OOPs, Collections, Algorithms, and debugging under timed pressure.</p>
+            </div>
+          </div>
+
+          <div class="mock-step-card">
+            <div class="step-num">02</div>
+            <div>
+              <h4>Architecture & Framework Round</h4>
+              <p>System design basics, Spring Boot, REST APIs, Microservices, Django, React, or Cloud architectures.</p>
+            </div>
+          </div>
+
+          <div class="mock-step-card">
+            <div class="step-num">03</div>
+            <div>
+              <h4>Managerial & HR Round</h4>
+              <p>Behavioral scenario questions, conflict resolution, CTC expectations, and confidence building techniques.</p>
+            </div>
+          </div>
+
+          <div class="mock-step-card">
+            <div class="step-num">04</div>
+            <div>
+              <h4>Comprehensive Feedback Scorecard</h4>
+              <p>Receive detailed metric scores covering code optimization, communication, and key weak zones to fix.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-booking-card">
+          <h3><i class="fa-solid fa-calendar-check"></i> Book Your Mock Interview Slot</h3>
+          <p class="subtitle">Free for registered students. Outsiders can book a trial evaluation slot.</p>
+          <form id="mockBookingForm" onsubmit="handleMockBooking(event)">
+            <div class="form-group">
+              <label for="mockName">Full Name</label>
+              <input type="text" id="mockName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="mockPhone">Mobile Number (10 Digits)</label>
+              <input type="tel" id="mockPhone" placeholder="10-digit mobile number" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mockDomain">Interview Domain</label>
+                <select id="mockDomain" required>
+                  <option value="">Select Domain</option>
+                  <option value="Java Full Stack">Java Full Stack</option>
+                  <option value="Python AI / Django">Python AI / Django</option>
+                  <option value="MERN Stack">MERN Stack</option>
+                  <option value="Software Testing">Software Testing QA</option>
+                  <option value="Data Analytics / SQL">Data Analytics / SQL</option>
+                  <option value="DevOps & AWS">DevOps & AWS</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mockDate">Preferred Date</label>
+                <input type="date" id="mockDate" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mockExperience">Current Level</label>
+              <select id="mockExperience" required>
+                <option value="Fresher (0-1 yr)">Fresher (0 - 1 yr)</option>
+                <option value="Junior Dev (1-2 yrs)">Junior Developer (1 - 2 yrs)</option>
+                <option value="Career Switcher (Non-IT to IT)">Career Switcher (Non-IT to IT)</option>
+                <option value="Experienced (2+ yrs)">Experienced (2+ yrs)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Confirm Mock Interview Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: DEMO LECTURES -->
+  <section id="demo-lectures" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Experience Free <span>Demo Lectures</span></h2>
+        <p>Watch sample sessions led by Kiran Sir and senior corporate faculty to experience our teaching methodology.</p>
+      </div>
+
+      <div class="demo-lectures-grid">
+        <div class="demo-video-card">
+          <div class="demo-thumbnail" onclick="playDemoVideo('Java Core & OOPs Masterclass', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80" alt="Java Demo">
+            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            <span class="video-duration">1 hr 45 min</span>
+          </div>
+          <div class="demo-info">
+            <span class="category-tag">Java Full Stack</span>
+            <h3>Java Memory Architecture & JVM Internal Working</h3>
+            <p>Understand Heap, Stack, Metaspace, Garbage Collection algorithms, and why Java runs anywhere.</p>
+            <div class="demo-meta">
+              <span><i class="fa-solid fa-user"></i> By Kiran Sir</span>
+              <span><i class="fa-solid fa-eye"></i> 48.2k Views</span>
+            </div>
+            <button class="btn btn-outline btn-sm btn-block" onclick="reserveDemoSeat('Java Memory Architecture')">Reserve Free Live Seat</button>
+          </div>
+        </div>
+
+        <div class="demo-video-card">
+          <div class="demo-thumbnail" onclick="playDemoVideo('Spring Boot Microservices', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" alt="Spring Boot Demo">
+            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            <span class="video-duration">2 hr 10 min</span>
+          </div>
+          <div class="demo-info">
+            <span class="category-tag">Backend Architecture</span>
+            <h3>Building Production-Ready REST APIs in Spring Boot 3</h3>
+            <p>Hands-on session creating secure endpoints, Spring Data JPA, JWT auth, and PostgreSQL connection.</p>
+            <div class="demo-meta">
+              <span><i class="fa-solid fa-user"></i> By Senior Architect</span>
+              <span><i class="fa-solid fa-eye"></i> 32.5k Views</span>
+            </div>
+            <button class="btn btn-outline btn-sm btn-block" onclick="reserveDemoSeat('Spring Boot 3 REST API')">Reserve Free Live Seat</button>
+          </div>
+        </div>
+
+        <div class="demo-video-card">
+          <div class="demo-thumbnail" onclick="playDemoVideo('Python & Machine Learning Demo', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" alt="Python Demo">
+            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            <span class="video-duration">1 hr 30 min</span>
+          </div>
+          <div class="demo-info">
+            <span class="category-tag">Python & Data Science</span>
+            <h3>Python for AI: From NumPy to Neural Networks</h3>
+            <p>Data wrangling, Pandas dataframes, exploratory data analysis, and building your first ML model.</p>
+            <div class="demo-meta">
+              <span><i class="fa-solid fa-user"></i> By Dr. Rajesh Patil</span>
+              <span><i class="fa-solid fa-eye"></i> 29.1k Views</span>
+            </div>
+            <button class="btn btn-outline btn-sm btn-block" onclick="reserveDemoSeat('Python AI & Data Science')">Reserve Free Live Seat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: STUDENT DASHBOARD -->
+  <section id="dashboard" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>Student Learning <span>Dashboard</span></h2>
+        <p>Monitor your active enrolled courses, mock tests, fee statements, and certificates.</p>
+      </div>
+
+      <div class="dashboard-wrapper">
+        <div class="dash-sidebar">
+          <div class="dash-user">
+            <div class="user-avatar" id="dashUserAvatar"><i class="fa-solid fa-user-graduate"></i></div>
+            <h4 id="dashUserName">Guest Student</h4>
+            <p id="dashUserRole">Java Full Stack Batch #84</p>
+          </div>
+          <ul class="dash-nav">
+            <li class="active"><i class="fa-solid fa-gauge"></i> Overview</li>
+            <li><i class="fa-solid fa-book"></i> Enrolled Courses</li>
+            <li><i class="fa-solid fa-file-invoice"></i> Fee Receipts</li>
+            <li><i class="fa-solid fa-certificate"></i> Certificates</li>
+          </ul>
+        </div>
+
+        <div class="dash-main">
+          <div class="dash-cards-row">
+            <div class="d-card">
+              <div class="d-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <h5>Active Course</h5>
+                <h3>Java Full Stack Dev</h3>
+              </div>
+            </div>
+            <div class="d-card">
+              <div class="d-icon icon-green"><i class="fa-solid fa-circle-check"></i></div>
+              <div>
+                <h5>Course Progress</h5>
+                <h3>78% Completed</h3>
+              </div>
+            </div>
+            <div class="d-card">
+              <div class="d-icon icon-purple"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <h5>Mock Rating</h5>
+                <h3>4.8 / 5.0</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-section-box">
+            <div class="dash-box-header">
+              <h4>Current Syllabus Progress</h4>
+              <span class="badge-success">Batch Progress: On Track</span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: 78%;">78%</div>
+            </div>
+            <div class="module-list">
+              <div class="module-item done"><i class="fa-solid fa-circle-check"></i> Module 1: Core Java, OOPs, Collections & Multi-threading</div>
+              <div class="module-item done"><i class="fa-solid fa-circle-check"></i> Module 2: Advanced Java, JDBC, Servlets & JSP</div>
+              <div class="module-item done"><i class="fa-solid fa-circle-check"></i> Module 3: Hibernate ORM & Spring Framework Core</div>
+              <div class="module-item active"><i class="fa-solid fa-spinner fa-spin"></i> Module 4: Spring Boot 3, REST APIs & Microservices (In Progress)</div>
+              <div class="module-item pending"><i class="fa-solid fa-clock"></i> Module 5: React 18 Frontend Integration & Redux</div>
+              <div class="module-item pending"><i class="fa-solid fa-clock"></i> Module 6: AWS Cloud Deployment, Docker & CI/CD</div>
+            </div>
+          </div>
+
+          <div class="dash-section-box">
+            <div class="dash-box-header">
+              <h4>Upcoming Live Technical Sessions & Mock Slots</h4>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>Date & Time</th>
+                  <th>Mentor</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Spring Boot Microservices & JWT Security</td>
+                  <td>Sat, 10:00 AM</td>
+                  <td>Kiran Sir</td>
+                  <td><span class="status-badge upcoming">Scheduled</span></td>
+                </tr>
+                <tr>
+                  <td>1-on-1 Mock Interview (Technical Round 2)</td>
+                  <td>Sun, 02:30 PM</td>
+                  <td>Mr. Sameer K. (TCS Lead)</td>
+                  <td><span class="status-badge upcoming">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>Resume Optimization & Portfolio Review</td>
+                  <td>Next Tue, 06:00 PM</td>
+                  <td>Placement Cell</td>
+                  <td><span class="status-badge live">Live Link Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: ABOUT US -->
+  <section id="about" class="page-section">
+    <div class="container section-padding">
+      <div class="section-title">
+        <h2>About <span>The Kiran Academy</span></h2>
+        <p>Maharashtra's premier IT training powerhouse dedicated to transforming fresh graduates into corporate software engineers.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80" alt="About The Kiran Academy">
+          <div class="experience-card">
+            <h3>12+ Years</h3>
+            <p>Of Technical Education Excellence</p>
+          </div>
+        </div>
+        <div class="about-text">
+          <h3>Empowering Dreams Through Practical Coding</h3>
+          <p>Founded by Kiran Sir with a vision to bridge the stark gap between academic college syllabus and fast-evolving corporate software demands. We specialize in deep-dive, industry-grade programming training where every single concept is backed by hands-on architecture and clean coding practices.</p>
+          
+          <div class="about-points">
+            <div class="pt"><i class="fa-solid fa-check"></i> Over 12,500+ successful alumni working in Fortune 500 tech firms.</div>
+            <div class="pt"><i class="fa-solid fa-check"></i> 100% placement assurance with unlimited recruitment drives.</div>
+            <div class="pt"><i class="fa-solid fa-check"></i> Industry experienced corporate trainers and architects.</div>
+            <div class="pt"><i class="fa-solid fa-check"></i> Hybrid learning mode: Offline labs + Interactive live virtual sessions.</div>
+          </div>
+
+          <div class="contact-card">
+            <h4><i class="fa-solid fa-location-dot"></i> Visit Our Training Campuses</h4>
+            <p><strong>Pune Campus:</strong> 4th Floor, Deccan IT Hub, FC Road, Pune, Maharashtra 411004</p>
+            <p><strong>Nashik Campus:</strong> City Center IT Park, Gangapur Road, Nashik, Maharashtra 422002</p>
+            <p><strong>Helpline:</strong> +91 91234 56789 | <strong>Email:</strong> contact@thekiranacademy.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: LOGIN -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-lock"></i> Student / Faculty Login</h3>
+        <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginMobile">Mobile Number</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-phone"></i>
+              <input type="tel" id="loginMobile" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+            <span class="error-msg" id="loginMobileError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-key"></i>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required>
+              <button type="button" class="eye-toggle" onclick="togglePasswordVisibility('loginPassword', this)"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <span class="error-msg" id="loginPasswordError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-right-to-bracket"></i> Login Now</button>
+
+          <p class="modal-switch-text">
+            Don't have an account? <a href="javascript:void(0)" onclick="switchModal('loginModal', 'signupModal')">Sign Up Here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SIGNUP (With 10-digit Mobile and Special Character Password validation) -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-plus"></i> Create Student Account</h3>
+        <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" onsubmit="handleSignup(event)">
+          <div class="form-group">
+            <label for="signupFullName">Full Name *</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="signupFullName" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <span class="error-msg" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email Address *</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="signupEmail" placeholder="e.g. rahul@gmail.com" required>
+            </div>
+            <span class="error-msg" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signupMobile">Mobile Number (Must be exactly 10 digits) *</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <input type="tel" id="signupMobile" placeholder="e.g. 9876543210" maxlength="10" required>
+            </div>
+            <span class="input-hint">Enter 10-digit Indian phone number (starting with 6, 7, 8, or 9)</span>
+            <span class="error-msg" id="mobileError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signupCourse">Interested Course *</label>
+            <select id="signupCourse" required>
+              <option value="">-- Choose Course --</option>
+              <option value="Java Full Stack Development">Java Full Stack Development (₹36,000)</option>
+              <option value="Python Full Stack with AI">Python Full Stack with AI (₹34,000)</option>
+              <option value="MERN Full Stack Web Development">MERN Full Stack Web Development (₹35,000)</option>
+              <option value="Software Testing (Manual + Automation)">Software Testing (₹28,000)</option>
+              <option value="Data Science & Machine Learning">Data Science & ML (₹42,000)</option>
+              <option value="DevOps & AWS Cloud Architecture">DevOps & AWS Cloud (₹32,000)</option>
+              <option value="Data Analytics (Power BI + SQL + Python)">Data Analytics (₹30,000)</option>
+              <option value="Spring Boot & Microservices Masterclass">Spring Boot Microservices (₹22,000)</option>
+              <option value="Cyber Security & Ethical Hacking">Cyber Security (₹38,000)</option>
+              <option value="Salesforce Development & Admin">Salesforce (₹33,000)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password (Requires at least 1 special character) *</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="signupPassword" placeholder="Min 8 chars, 1 special symbol (@, #, $, etc.)" required>
+              <button type="button" class="eye-toggle" onclick="togglePasswordVisibility('signupPassword', this)"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="password-checklist">
+              <span id="chkLength"><i class="fa-regular fa-circle"></i> Min 8 Characters</span>
+              <span id="chkSpecial"><i class="fa-regular fa-circle"></i> At least 1 Special Char (!@#$%^&*)</span>
+              <span id="chkNumber"><i class="fa-regular fa-circle"></i> At least 1 Number</span>
+            </div>
+            <span class="error-msg" id="passwordError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signupConfirmPassword">Confirm Password *</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="signupConfirmPassword" placeholder="Re-enter password" required>
+            </div>
+            <span class="error-msg" id="confirmPasswordError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-check"></i> Register & Get Instant Demo Access</button>
+
+          <p class="modal-switch-text">
+            Already registered? <a href="javascript:void(0)" onclick="switchModal('signupModal', 'loginModal')">Login Here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: COURSE ENROLLMENT -->
+  <div class="modal-overlay" id="enrollModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="enrollModalTitle">Enroll in Course</h3>
+        <button class="modal-close" onclick="closeModal('enrollModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="enrollForm" onsubmit="handleEnrollmentSubmit(event)">
+          <input type="hidden" id="enrollCourseName">
+          <div class="enroll-fee-highlight">
+            <span class="fee-lbl">Course Total Fee:</span>
+            <span class="fee-val" id="enrollModalFee">₹0</span>
+          </div>
+          <div class="form-group">
+            <label for="enrollStudentName">Student Full Name</label>
+            <input type="text" id="enrollStudentName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="enrollStudentMobile">10-Digit Mobile Number</label>
+            <input type="tel" id="enrollStudentMobile" placeholder="10-digit mobile number" maxlength="10" required>
+          </div>
+          <div class="form-group">
+            <label for="enrollBatch">Preferred Batch Type</label>
+            <select id="enrollBatch" required>
+              <option value="Weekday Morning (08:00 AM - 10:00 AM)">Weekday Morning (08:00 AM - 10:00 AM)</option>
+              <option value="Weekday Evening (06:00 PM - 08:00 PM)">Weekday Evening (06:00 PM - 08:00 PM)</option>
+              <option value="Weekend Special (Sat & Sun 10:00 AM - 02:00 PM)">Weekend Special (Sat & Sun)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-lock"></i> Secure Seat (Pay & Register)</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <div class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="logo-text">
+            <span class="logo-main">The Kiran Academy</span>
+            <span class="logo-sub">Transforming IT Aspirants</span>
+          </div>
+        </div>
+        <p class="footer-desc">The Kiran Academy is Maharashtra's premier technical institute dedicated to imparting high-yield, corporate-standard programming education with assured placement support.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Top Courses</h4>
+        <ul class="footer-links">
+          <li><a href="#courses" onclick="showSection('courses')">Java Full Stack Development</a></li>
+          <li><a href="#courses" onclick="showSection('courses')">Python Full Stack & AI</a></li>
+          <li><a href="#courses" onclick="showSection('courses')">MERN Web Development</a></li>
+          <li><a href="#courses" onclick="showSection('courses')">Software Testing (QA)</a></li>
+          <li><a href="#courses" onclick="showSection('courses')">Data Science & ML</a></li>
+          <li><a href="#courses" onclick="showSection('courses')">DevOps & Cloud</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home" onclick="showSection('home')">Home</a></li>
+          <li><a href="#placements" onclick="showSection('placements')">Recent Placements</a></li>
+          <li><a href="#mock-interviews" onclick="showSection('mock-interviews')">Mock Interviews</a></li>
+          <li><a href="#demo-lectures" onclick="showSection('demo-lectures')">Free Demo Lectures</a></li>
+          <li><a href="#dashboard" onclick="showSection('dashboard')">Student Dashboard</a></li>
+          <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support & Help</h4>
+        <p><i class="fa-solid fa-phone"></i> +91 91234 56789</p>
+        <p><i class="fa-solid fa-envelope"></i> admissions@thekiranacademy.com</p>
+        <p><i class="fa-solid fa-clock"></i> Mon - Sun: 8:00 AM - 8:00 PM</p>
+        <div class="secure-badge">
+          <i class="fa-solid fa-shield-halved"></i> 100% Genuine Placement Assistance
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container copyright-bar">
+        <p>© 2026 The Kiran Academy. All Rights Reserved.</p>
+        <p>Crafted with Clean HTML, CSS & JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Task_01.js"></script>
+</body>
+</html>
