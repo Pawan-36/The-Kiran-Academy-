@@ -1,0 +1,55 @@
+1= Meta Ai
+2= Google 
+3= Anthropic
+4= xAI
+5= Mistral AI
+6= Open Ai
+7= AI video generation from text prompts
+8= Google DeepMind
+9= AI image generation
+10 = AI-assisted coding and code completion.
+
+11= Large Language Model
+12= Creates content
+13= AI instruction
+14 = AI behavior instructions
+15= Multiple data types
+16= Made-up/incorrect output
+17= Pieces of text
+18= Information AI can consider at once
+19= Model produces output
+20= Train model for a specific task
+
+
+21= Agent = AI that can plan + use tools + act
+22= Chatbot = responds, Agent = takes actions
+23= Tool Calling = AI uses external functions/tools
+24= MCP = Model Context Protocol
+25= API Key = Authentication/authorization
+26= Rate Limit = Request limit over time
+27= Cursor = AI-powered code editor/IDE
+28= NotebookLM = Work with provided sources/documents
+29= Semantic Search = Search by meaning
+30= GenAI = Code, debug, documentation
+
+31= STT = Speech → Text
+32= TTS = Text → Speech
+33= OCR = Extract text from images
+34= Vision Model = Understands images/video
+35= Text-to-Video = Text → Video
+36= Diffusion = Content generation
+37= GPU = Parallel computation
+38= NPU = AI-specialized processor
+39= VRAM = Stores model data during processing
+40= Local AI = Runs on your own device
+
+41= Open-weight = Model weights available
+42= Distillation = Large teacher → smaller student
+43= LoRA = Efficient fine-tuning
+44= MoE = Mixture of Experts
+45= Benchmark = Measure/compare AI performance
+46= Guardrail = AI safety/control mechanism
+47= Prompt injection = Manipulating AI instructions
+48= PII = Personally Identifiable Information
+49= Confidential data = Privacy & security risk
+50= Important answer = Verify before using
